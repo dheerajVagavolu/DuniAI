@@ -1,25 +1,19 @@
-import CompanionForm from '@/components/CompanionForm';
-import React from 'react';
-// import { canCreateCompanion } from '@/lib/actions/companion.actions';
-import Image from 'next/image';
-import { auth } from '@clerk/nextjs/server';
-import Link from 'next/link';
-import { redirect } from 'next/navigation';
+import CompanionForm from "@/components/CompanionForm";
+import {auth} from "@clerk/nextjs/server";
+import {redirect} from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
 
 const NewCompanion = async () => {
-  const { userId } = await auth();
-  const canCreateCompanion = true;
+    const { userId } = await auth();
+    if(!userId) redirect('/sign-in');
 
-    // const canCreateCompanion = await canCreateCompanion(userId)
+    const canCreateCompanion = true;
 
-  if (!userId) redirect('/sign-in');
-
-  return (
-    <main className="min-lg:w-1/3 min-md:w-2/3 items-center justify-center">
+    return (
+        <main className="min-lg:w-full min-md:w-full items-center justify-center">
             {canCreateCompanion ? (
-                <article className="w-full gap-4 flex flex-col">
-                    <h1>Companion Builder</h1>
-
+                <article className="w-full gap-4 flex flex-col justify-center items-center p-6">
                     <CompanionForm />
                 </article>
                 ) : (
@@ -36,7 +30,7 @@ const NewCompanion = async () => {
                     </article>
                 )}
         </main>
-  );
+    )
 }
 
-export default NewCompanion;
+export default NewCompanion

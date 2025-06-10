@@ -71,6 +71,15 @@ interface SavedMessage {
   content: string;
 }
 
+type Question = {
+  question: string;
+  type: "white-board" | "coding";
+  setup_code?: string | null;
+  difficulty: "easy" | "medium" | "hard";
+  explanation: string;
+  rubric: string;
+};
+
 interface CompanionComponentProps {
   companionId: string;
   subject: string;
@@ -80,4 +89,5 @@ interface CompanionComponentProps {
   userImage: string;
   voice: string;
   style: string;
+  questions: Question[];
 }

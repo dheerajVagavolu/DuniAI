@@ -22,6 +22,7 @@ const Navbar = () => {
                         width={46}
                         height={44}
                     />
+                    <h1 className='text-2xl font-bold text-primary'>DataDojo</h1>
                 </div>
             </Link>
             <div className='flex items-center gap-8'>

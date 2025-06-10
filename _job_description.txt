@@ -1,0 +1,56 @@
+About the job
+About Turing:
+
+Turing is one of the world’s fastest-growing AI companies accelerating the advancement and deployment of powerful AI systems. 
+
+
+
+Turing helps customers in two ways: Working with the world’s leading AI labs to advance frontier model capabilities in thinking, reasoning, coding, agentic behavior, multimodality, multilinguality, STEM and frontier knowledge; and leveraging that work to build real-world AI systems that solve mission-critical priorities for companies. 
+
+
+
+Role Overview:
+
+In this role, you will be working on projects to help fine-tune large language models (like ChatGPT) using your strong analytical and english comprehension skills
+The ideal candidate should have a solid foundation in Biology, particularly at the level expected in engineering entrance exams, as well as graduate or PhD-level programs.
+You should be able to break down complex biological concepts into simple, clear explanations and work efficiently.
+The projects will also help you learn how to leverage AI to be a better analyst. This is your chance to future-proof your career in an AI-first world!
+
+
+What does day-to-day look like:
+
+Design and solve challenging Biology problems to probe the limitations of large language models.
+Develop high-quality, step-by-step solutions with clear and rigorous reasoning.
+Collaborate with LLM researchers to align problem types with evaluation goals, especially in areas where models typically struggle (e.g., conceptual abstraction, multi-step reasoning, and data interpretation).
+Contribute to defining new evaluation benchmarks based on Biology curricula spanning early undergraduate to PhD-level topics.
+
+
+Requirements:
+
+Analytical Skills: Good research and analytical skills
+Feedback Skills: Ability to provide constructive feedback and detailed annotations.
+Creative Thinking: Creative and lateral thinking abilities.
+Communication: Excellent structured communication and collaboration skills in a remote setting.
+Independence: Self-motivated and able to work independently in a remote setting.
+Technical Setup: Desktop/Laptop set up with a good internet connection.
+
+
+Preferred Qualifications:
+
+Candidates pursuing a Master’s/Ph.D./Postdoctoral degree in Biology, Biotechnology, Biochemistry, or a related field are eligible and encouraged to apply.
+Ability to analyze and solve complex biological problems with a structured approach.
+Ability to explain Biology concepts clearly using simple language, visuals, and simulations when needed.
+
+
+Perks of Freelancing With Turing:
+
+Work in a fully remote environment.
+Opportunity to work on cutting-edge AI projects with leading LLM companies.
+Potential for contract extension based on performance and project needs.
+
+
+Evaluation Process (approximately 80-90 mins) :
+
+Shortlisted candidates will be sent an automated analytical challenge (approximately 30 mins)
+Once you clear the challenge, you will be redirected to a Biology assessment (approximately 30 minutes) followed by a language proficiency assessment (approximately 20 minutes).
+Once you clear these online assessments, you are ready to go!
