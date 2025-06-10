@@ -15,10 +15,7 @@ type Question = {
 export const QuestionComponent = ({ questions, userInput, setUserInput }: { questions: { questions: Question[] }, userInput: string, setUserInput: React.Dispatch<React.SetStateAction<string>> }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const selectedQuestion = questions.questions[selectedIndex];
-
-  const [showQuestions, setShowQuestions] = useState(false);
-  const toggleQuestions = () => setShowQuestions(!showQuestions);
-
+  
   useEffect(() => {
     // Send the selected question to the backend when it changes
     vapi.send({
@@ -56,13 +53,13 @@ export const QuestionComponent = ({ questions, userInput, setUserInput }: { ques
 
         {selectedQuestion.type === "white-board" ? (
           <div>
-            <label className="block font-medium mb-2">Your Answer:</label>
+            <label className="block font-medium mb-2">Scratch Pad</label>
             <textarea
               rows={10}
               className="w-full p-3 border rounded resize-y"
               value={userInput}
               onChange={(e) => setUserInput(e.target.value)}
-              placeholder="Type your theoretical explanation here..."
+              placeholder="Your companion will guide you as you take notes here ..."
             />
           </div>
         ) : (

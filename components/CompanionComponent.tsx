@@ -52,13 +52,6 @@ const CompanionComponent = ({ companionId, subject, topic, name, userName, userI
 
     useEffect(() => {
         const onCallStart = () => {
-            // vapi.send({
-            //     type: "add-message",
-            //     message: {
-            //         role: "user",
-            //         content: "The job description is: " + job_description + ". and the questions are: " + questions.questions.map(q => q.question).join(', '),
-            //     },
-            // });
             setCallStatus(CallStatus.ACTIVE);
         }
 
@@ -110,7 +103,6 @@ const CompanionComponent = ({ companionId, subject, topic, name, userName, userI
             clientMessages: ["transcript"],
             serverMessages: [],
         }
-
         // @ts-expect-error
         vapi.start(configureAssistant(voice, style, topic, questions), assistantOverrides)
     }

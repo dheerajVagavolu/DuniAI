@@ -35,7 +35,8 @@ const formSchema = z.object({
   voice: z.string().min(1, { message: "Voice is required." }),
   style: z.string().min(1, { message: "Style is required." }),
   duration: z.coerce.number().min(1, { message: "Duration is required." }),
-  latestJobPosts: z.boolean().optional(),
+  // latestJobPosts: z.boolean().optional(),
+  // findDocumentation: z.boolean().optional(),
 });
 
 const CompanionForm = () => {
@@ -49,7 +50,8 @@ const CompanionForm = () => {
       topic: "",
       voice: "male",
       style: "",
-      latestJobPosts: false,
+      // latestJobPosts: false,
+      // findDocumentation: false,
       duration: 10,
     },
   });
@@ -70,108 +72,115 @@ const CompanionForm = () => {
     
   };
 
+  // ... existing code ...
   if (loading) {
     return (
-      <div className="flex flex-col h-64 justify-center items-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
-        <p className="mt-4 text-lg">Generating a personalized set of learning questions for you...</p>
+      <div className="flex flex-col items-center justify-center min-h-[400px] p-8 bg-white rounded-xl shadow-lg">
+        <div className="relative w-24 h-24 mb-8">
+          <div className="absolute inset-0 border-4 border-blue-200 rounded-full"></div>
+          <div className="absolute inset-0 border-4 border-blue-600 rounded-full animate-spin border-t-transparent"></div>
+        </div>
+        <h3 className="text-2xl font-semibold text-gray-800 mb-2">Creating Your Learning Path</h3>
+        <p className="text-gray-600 text-center max-w-md">
+          We're analyzing your requirements and generating personalized learning questions...
+        </p>
+        <div className="mt-6 flex gap-2">
+          <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+          <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+          <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce"></div>
+        </div>
       </div>
     );
   }
+// ... existing code ...
 
+  // ... existing code ...
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 lg:w-1/3 md:w-full sm:w-full">
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Project Name</FormLabel>
-              <FormControl>
-                <Input
-                  placeholder="Enter a Project Name"
-                  {...field}
-                  className="input"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full max-w-2xl mx-auto p-6 bg-white rounded-xl shadow-lg">
+        <div className="space-y-2 text-center mb-8">
+          <h2 className="text-3xl font-bold tracking-tight">Create Your AI Learning Companion</h2>
+          <p className="text-muted-foreground">Fill in the details below to start your personalized learning journey</p>
+        </div>
 
-        <FormField
-          control={form.control}
-          name="topic"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>What do you want to focus on? (Job role, skills, or technologies)</FormLabel>
-              <FormControl>
-                <Textarea
-                  placeholder="Ex. C++ Developer, PySpark, etc."
-                  {...field}
-                  className="input"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        <div className="grid gap-6">
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-lg font-semibold">Project Name</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="Enter a Project Name"
+                    {...field}
+                    className="input h-12 text-lg"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
+          <FormField
+            control={form.control}
+            name="topic"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-lg font-semibold">Learning Focus</FormLabel>
+                <FormControl>
+                  <Textarea
+                    placeholder="Ex. C++ Developer, PySpark, etc."
+                    {...field}
+                    className="input min-h-[120px] text-lg resize-none"
+                  />
+                </FormControl>
+                <FormDescription className="text-sm text-muted-foreground">
+                  Describe what you want to learn or practice
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
+          <FormField
+            control={form.control}
+            name="style"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-lg font-semibold">Learning Style</FormLabel>
+                <FormControl>
+                  <Select
+                    onValueChange={field.onChange}
+                    value={field.value}
+                    defaultValue={field.value}
+                  >
+                    <SelectTrigger className="input h-12 text-lg">
+                      <SelectValue placeholder="Select a Style of Conversation" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="Interviewer (Evaluation Mode)" className="text-lg py-3">
+                        Interviewer (Evaluation Mode)
+                      </SelectItem>
+                      <SelectItem value="Pair Programmer (Teaching Mode)" className="text-lg py-3">
+                        Pair Programmer (Teaching Mode)
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
+                </FormControl>
+                <FormDescription className="text-sm text-muted-foreground">
+                  Choose how you want to interact with your AI companion
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
 
-        <FormField
-          control={form.control}
-          name="style"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Agent Style</FormLabel>
-              <FormControl>
-                <Select
-                  onValueChange={field.onChange}
-                  value={field.value}
-                  defaultValue={field.value}
-                >
-                  <SelectTrigger className="input">
-                    <SelectValue placeholder="Select a Style of Conversation" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="Interviewer (Evaluation Mode)">Interviewer (Evaluation Mode)</SelectItem>
-                    <SelectItem value="Pair Programmer (Teaching Mode)">Pair Programmer (Teaching Mode)</SelectItem>
-                  </SelectContent>
-                </Select>
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-
-            
-            // Will add dummy form items here, a check box for scraping latest job descriptions
-
-
-            
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="latestJobPosts"
-          render={({ field }) => (
-            <FormItem className="flex flex-row items-center space-x-3 space-y-0">
-              <FormControl>
-                <Input
-                  type="checkbox"
-                  checked={field.value}
-                  onChange={e => field.onChange(e.target.checked)}
-                  className="h-4 w-4 border rounded"
-                />
-              </FormControl>
-              <FormLabel className="font-normal">
-                Search latest job posts
-              </FormLabel>
-            </FormItem>
-          )}
-        />
-        <Button type="submit" className="w-full cursor-pointer">
+        <Button 
+          type="submit" 
+          className="w-full h-12 text-lg font-semibold bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-lg hover:shadow-xl"
+        >
           Generate Learning Path
         </Button>
       </form>
