@@ -2,7 +2,9 @@
 
 ## Overview
 
-AI Learning Companion is a platform providing personalized AI-powered learning experiences. It connects users with AI companions that assist in various subjects and topics, making learning interactive and engaging.
+This platform helps users prepare for job interviews or skill assessments by generating personalized questions based on job posts and learning preferences. Users interact with the system through voice or text in real time, guided by a conversational AI agent that provides instant feedback and walkthroughs of the problems.
+
+This prototype features a multimodal, real-time natural voice agent, powered by Vapi, which dynamically reacts to both voice input and typed text, providing responsive guidance. The platform currently enables interactive learning experiences with AI companions, offers support across various subjects, and provides real-time feedback and progress tracking.
 
 ## Motivation
 
